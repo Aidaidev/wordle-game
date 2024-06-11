@@ -1,11 +1,10 @@
-import {ComponnetA, ComponentB} from '../components/index';
+import Game from "../components/Game";
 
 const Main = () => {
   return (
     <div>
-      <ComponnetA />
-      <ComponentB />
+      <Game />
     </div>
-  );  
+  );
 };
 export default Main;
