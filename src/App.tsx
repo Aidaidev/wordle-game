@@ -1,9 +1,9 @@
-import Main from "./pages";
 import "./App.css";
+import Words from "./pages/Words";
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Words />
     </div>
   );
 }
