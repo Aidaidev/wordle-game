@@ -5,10 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #dcd1d1;
-  box-shadow: 5px 5px 10px #635f5f;
+  border: 2px solid #d3d3d3;
   border-radius: 4px;
-  background-color: #f1efef;
+  background-color: #fff;
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
