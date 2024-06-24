@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import useFetch from "./useFetch";
 
 export const useWordle = () => {
-  const [guesses, setGuesses] = useState<string[][]>(Array.from({ length: 6 }, () => Array(5).fill("")));
+  const [guesses, setGuesses] = useState<string[][]>(
+    Array.from({ length: 6 }, () => Array(5).fill(""))
+  );
   const [currentGuesses, setCurrentGuesses] = useState<string>("");
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [gameOver, setGameOver] = useState<boolean>(false);
+  const [messsage, setMessage] = useState<boolean>(false);
   const { isLoading, data } = useFetch();
   const [word, setWord] = useState<string>("");
 
@@ -25,6 +28,7 @@ export const useWordle = () => {
       setCurrentGuesses("");
       setCurrentIndex(0);
       setGameOver(false);
+      setMessage(false);
     }
   };
 
@@ -42,6 +46,7 @@ export const useWordle = () => {
         } else {
           alert(`Вы проиграли. Правильное слово: ${word}`);
           setGameOver(true);
+          setMessage(true);
         }
       }
     } else if (e.key === "Backspace") {
@@ -66,7 +71,7 @@ export const useWordle = () => {
   }, [currentGuesses, currentIndex]);
 
   const getTileClass = (letter: string, col: number, row: number) => {
-    if (gameOver && guesses[row].join('') === word) {
+    if (gameOver && guesses[row].join("") === word) {
       return "correct";
     }
     if (word[col] === letter) {
@@ -85,6 +90,7 @@ export const useWordle = () => {
     gameOver,
     currentGuesses,
     currentIndex,
+    messsage,
     getTileClass,
     initializeGame,
   };
