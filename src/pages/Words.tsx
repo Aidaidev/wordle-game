@@ -45,7 +45,7 @@ const Words = () => {
             </div>
           ))}
           {messsage && (
-            <p style={{ color: "white" }}>Правильное слово: {word}</p>
+            <p>Правильное слово: {word}</p>
           )}
           {gameOver && (
             <div>
