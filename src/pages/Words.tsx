@@ -9,6 +9,7 @@ const Words = () => {
     isLoading,
     guesses,
     gameOver,
+    messsage,
     currentGuesses,
     currentIndex,
     getTileClass,
@@ -43,9 +44,11 @@ const Words = () => {
               })}
             </div>
           ))}
+          {messsage && (
+            <p>Правильное слово: {word}</p>
+          )}
           {gameOver && (
             <div>
-              <p>Правильное слово: {word}</p>
               <button onClick={initializeGame}>Начать новую игру</button>
             </div>
           )}
