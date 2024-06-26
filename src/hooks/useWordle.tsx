@@ -39,6 +39,7 @@ export const useWordle = () => {
       if (currentGuesses === word) {
         alert(`Вы угадали слово ${word}`);
         setGameOver(true);
+        setMessage(false);
       } else {
         if (currentIndex < 5) {
           setCurrentIndex(currentIndex + 1);
@@ -76,6 +77,9 @@ export const useWordle = () => {
     }
     if (word[col] === letter) {
       return "correct";
+    }
+    if (word.includes(letter) && letter == "") {
+      return "white";
     }
     if (word.includes(letter)) {
       return "present";
